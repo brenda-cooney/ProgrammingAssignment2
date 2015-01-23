@@ -33,7 +33,7 @@ cacheSolve <- function(x, m, ...) {
         ## If the matrix has changed then reset the stored matrix in cache
         if(!identical(m, x$get())) x$set(m)
         
-        data <- x$get() ## Initialize matrix object 'x'
+        data <- x$get() ## Get cached matrix object 'x'
         i <- solve(data, ...) ## Invert 'x'
         x$setinverse(i) ## Set 'i' in cache
         return(i) ## Return i
